@@ -21,7 +21,9 @@ public class Episodio {
     @ManyToOne
     private Temporada temporada;
 
-    public static Episodio translate(EpisodioDTO episodio) {
-        return new Episodio(episodio.getId(), episodio.getNumero(), episodio.getDescricao(), episodio.getResumo(), episodio.getTemporada());
+    public static Episodio translate(EpisodioDTO dto) {
+        assert dto != null;
+        var temporada = dto.getTemporada() != null ? Temporada.translate(dto.getTemporada()) : null;
+        return new Episodio(dto.getId(), dto.getNumero(), dto.getDescricao(), dto.getResumo(), temporada);
     }
 }

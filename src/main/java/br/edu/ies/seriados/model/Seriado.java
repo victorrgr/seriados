@@ -9,7 +9,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import java.time.LocalDate;
+import java.util.Date;
 
 @Data
 @NoArgsConstructor
@@ -19,10 +19,11 @@ public class Seriado {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String nome;
-    private LocalDate dataLancamento;
+    private Date dataLancamento;
     private String descricao;
 
     public static Seriado translate(SeriadoDTO dto) {
+        assert dto != null;
         return new Seriado(dto.getId(), dto.getNome(), dto.getDataLancamento(), dto.getDescricao());
     }
 }

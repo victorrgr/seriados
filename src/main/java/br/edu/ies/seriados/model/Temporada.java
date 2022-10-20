@@ -21,6 +21,8 @@ public class Temporada {
     private Seriado seriado;
 
     public static Temporada translate(TemporadaDTO dto) {
-        return new Temporada(dto.getId(), dto.getNumero(), dto.getDescricao(), dto.getSeriado());
+        assert dto != null;
+        var seriado = dto.getSeriado() != null ? Seriado.translate(dto.getSeriado()) : null;
+        return new Temporada(dto.getId(), dto.getNumero(), dto.getDescricao(), seriado);
     }
 }

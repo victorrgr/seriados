@@ -3,6 +3,7 @@ package br.edu.ies.seriados.controller;
 import br.edu.ies.seriados.dto.SeriadoDTO;
 import br.edu.ies.seriados.model.Seriado;
 import br.edu.ies.seriados.repository.SeriadoRepository;
+import br.edu.ies.seriados.standard.StandardController;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -11,7 +12,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/seriado")
-public class SeriadoController {
+public class SeriadoController extends StandardController {
 
     @Autowired
     private SeriadoRepository repository;

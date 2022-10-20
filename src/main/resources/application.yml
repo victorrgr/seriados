@@ -8,3 +8,7 @@ spring:
     password: 9922
   jackson:
     time-zone: Brazil/East
+
+springdoc:
+  swagger-ui:
+      path: /swagger
