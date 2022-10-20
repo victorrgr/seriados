@@ -1,0 +1,10 @@
+spring:
+  jpa:
+    hibernate:
+      ddl-auto: update
+  datasource:
+    url: jdbc:postgresql://localhost:5432/seriados
+    username: postgres
+    password: 9922
+  jackson:
+    time-zone: Brazil/East
